@@ -1,8 +1,8 @@
-export const MovePieces = 'MovePieces'
+export const MovePieces = 'MovePieces';
 
 
 
 export const movePieces = mouseClick => ({
-    type: MovePieces,
-    mouseClick,
-})
+  type: MovePieces,
+  mouseClick,
+});

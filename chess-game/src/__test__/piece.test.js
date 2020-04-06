@@ -3,7 +3,8 @@ import ReactDom from 'react-dom';
 import Piece from '../components/piece';
 
 
-it("renders without crashhing", () => {
-    const 
-})
+it('renders without crashhing', () => {
+  const circle = document.createElement('circle');
+    
+});
 
