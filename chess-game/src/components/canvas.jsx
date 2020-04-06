@@ -1,9 +1,8 @@
 import React from 'react';
-import Background from './background';
-import Lines from './horizontalLines';
+import HLines from './horizontalLines';
 import VertLines from './verticalLines';
-import TopPieces from './basicPieces';
-import Squares from './square';
+import Pieces from './basicPieces';
+
 
 const Canvas = ({onClick}) => {
 
@@ -19,14 +18,13 @@ const Canvas = ({onClick}) => {
       <button onClick={onClick}>Start Game</button>
       <svg
       id="chess-canvas"
-      preserveAspectRatio="xMaxYMax none"
+      // preserveAspectRatio="xMaxYMax none"
       style={styleSheet}
       >
-        <Background />
-        <Lines />
+
+        <HLines />
         <VertLines />
-        <TopPieces />
-        {/* <BottomPieces /> */}
+        <Pieces />
       </svg>
     </div>
 

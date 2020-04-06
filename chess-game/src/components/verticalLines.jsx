@@ -15,6 +15,7 @@ const VerticalLines = () => {
     array.forEach((value, index) => {
       items.push(      
         <line
+        key={index}
           x1={index * height/array.length}
           y1={0}
           x2={index * height/array.length}

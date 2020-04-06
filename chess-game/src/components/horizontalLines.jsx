@@ -15,6 +15,7 @@ const Lines = () => {
     array.forEach((value, index) => {
       items.push(      
         <line
+          key={index}
           x1={0}
           y1={index * height/array.length}
           x2={width}

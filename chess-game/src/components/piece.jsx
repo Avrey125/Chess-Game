@@ -1,18 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const styleSheet = {
-  border: "2px solid black",
-  width: "75px",
-  height: "75px"
-}
+const Piece = (props) => {
 
-class Piece extends React.Component {
-  render() {
-    return (
-      <button className="square" style={styleSheet}></button>
-    )
+  function onclick() {
+    return console.log("this has been clicked")
   }
-  
-}
 
-export default Squares
+  return (
+    <g>
+      <circle
+        data-testid="circle"
+        key={props.id}
+        cx={props.xCoordinate}
+        cy={props.yCoordinate}
+        r="20"
+        fill={props.fill}
+        id={props.id}
+        onClick={onclick()}
+      />
+    </g>
+
+  )
+}
+  
+
+export default Piece
