@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Piece from '../components/piece';
+import Piece from './piece';
 
 
 it('renders without crashhing', () => {
-  const circle = document.createElement('circle');
-    
+
 });
 

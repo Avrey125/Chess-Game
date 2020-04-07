@@ -15,7 +15,7 @@ const Pieces = () => {
       let x = index * width/array.length + spaceWidth/2;
       function movement(e) {
         x = x + 75; 
-        console.log('hhello')
+        console.log('hello')
         return x
       }
       items.push(      
