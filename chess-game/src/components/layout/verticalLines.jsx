@@ -1,6 +1,6 @@
 import React from 'react';
 
-const VerticalLines = () => {
+const Lines = () => {
   const division = {
     stroke: '#000000',
     strokeWidth: '3px',
@@ -21,7 +21,15 @@ const VerticalLines = () => {
           x2={index * height/array.length}
           y2={height}
           style={division}
-        />)
+        />,
+        <line
+        key={index}
+        x1={0}
+        y1={index * height/array.length}
+        x2={width}
+        y2={index * height/array.length}
+        style={division}
+      />);
       }
     )
   
@@ -32,4 +40,4 @@ const VerticalLines = () => {
   );
 };
 
-export default VerticalLines;
+export default Lines;

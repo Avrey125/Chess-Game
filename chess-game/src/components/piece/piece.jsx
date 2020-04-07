@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
   class Piece extends React.Component {
 
@@ -6,9 +6,20 @@ import React, {useState} from 'react';
       super()
 
       this.state = {
-        stroke: "white",
-        strokeWidth: 0
+        clicked: false,
       }
+
+      this.hasBeenClicked = this.hasBeenClicked.bind(this)
+    }
+
+    hasBeenClicked() {
+      if({clicked: false}) {
+        this.setState({clicked: true})
+      } else if({clicked: true}){
+        this.setState({clicked: false})
+      }
+
+      console.log("this has been clicked", this.state)
     }
 
     render(){
@@ -18,7 +29,7 @@ import React, {useState} from 'react';
           <circle
             data-testid="circle"
             key={this.props.id}
-            // onClick={onclick()}
+            onClick={this.hasBeenClicked}
             cx={this.props.xCoordinate}
             cy={this.props.yCoordinate}
             r="20"

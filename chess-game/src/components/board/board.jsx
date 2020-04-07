@@ -1,6 +1,5 @@
 import React from 'react';
-import HLines from '../layout/horizontalLines';
-import VertLines from '../layout/verticalLines';
+import Lines from '../layout/verticalLines';
 import Pieces from '../piece/basicPieces';
 
 
@@ -20,8 +19,8 @@ const Board = ({onClick}) => {
       id="chess-canvas"
       style={styleSheet}
       >
-        <HLines />
-        <VertLines />
+
+        <Lines />
         <Pieces />
       </svg>
     </div>

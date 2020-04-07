@@ -3,7 +3,8 @@ import ReactDom from 'react-dom';
 import Piece from './piece';
 
 
-it('renders without crashhing', () => {
-
+it('renders without crashing', () => {
+  let value = true;
+  expect(value).toBe(true);
 });
 
