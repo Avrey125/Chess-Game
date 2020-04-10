@@ -23,7 +23,7 @@ const Lines = () => {
           style={division}
         />,
         <line
-        key={index}
+        key={index + 8}
         x1={0}
         y1={index * height/array.length}
         x2={width}

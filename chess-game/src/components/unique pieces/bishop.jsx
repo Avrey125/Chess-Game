@@ -7,36 +7,36 @@ import React from 'react';
 
       this.state = {
         clicked: false,
-        xCoordinate: 75,
-        yCoordinate: 37.5
       }
 
-      // this.hasBeenClicked = this.hasBeenClicked.bind(this)
+      this.hasBeenClicked = this.hasBeenClicked.bind(this)
     }
 
-    // hasBeenClicked() {
-    //   if({clicked: false}) {
-    //     this.setState({clicked: true})
-    //   } else if({clicked: true}){
-    //     this.setState({clicked: false})
-    //   }
+    hasBeenClicked() {
+      if({clicked: false}) {
+        this.setState({clicked: true})
+      } else if({clicked: true}){
+        this.setState({clicked: false})
+      }
 
-    //   console.log("this has been clicked", this.state)
-    // }
+      console.log("this has been clicked", this.state)
+    }
 
     render(){
 
       return (
-        <g key={this.props.id}>
+        <g>
           <circle
             data-testid="circle"
+            key={this.props.id}
             type={this.props.type}
-            onClick={this.props.onClick}
+            onClick={this.hasBeenClicked}
             cx={this.props.xCoordinate}
             cy={this.props.yCoordinate}
             r="20"
             fill={this.props.fill}
             id={this.props.id}
+            text="Bishop"
           />
         </g>
       )
