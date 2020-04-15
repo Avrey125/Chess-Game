@@ -1,16 +1,27 @@
 import React from 'react';
 
+let spaceWidth = 75;
+
   class Piece extends React.Component {
+
 
     constructor() {
       super()
 
       this.state = {
         clicked: false,
+        xCoordinate: spaceWidth/2,
+        yCoordinate: spaceWidth/2,
       }
 
+      this.pawnMovement = this.pawnMovement.bind(this)
       this.hasBeenClicked = this.hasBeenClicked.bind(this)
     }
+
+   pawnMovement() {
+      this.setState({yCoordinate: this.state.yCoordinate + 75})
+      console.log('stuff')
+  } 
 
     hasBeenClicked() {
       if({clicked: false}) {
@@ -25,18 +36,16 @@ import React from 'react';
     render(){
 
       return (
-        <g>
+        <g key={this.state.id}>
           <circle
             data-testid="circle"
-            key={this.props.id}
-            type={this.props.type}
-            onClick={this.hasBeenClicked}
-            cx={this.props.xCoordinate}
-            cy={this.props.yCoordinate}
+            type={this.state.type}
+            onClick={this.pawnMovement}
+            cx={this.state.xCoordinate}
+            cy={this.state.yCoordinate}
             r="20"
-            fill={this.props.fill}
-            id={this.props.id}
-            text="Bishop"
+            fill={this.state.fill}
+            id={this.state.id}
           />
         </g>
       )
