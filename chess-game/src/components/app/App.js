@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
-
-import PropTypes from 'prop-types';
-import Canvas from './components/canvas'
+import Board from '../board/board'
 import { connect } from 'react-redux';
 
 const  App = () => {
 
   return (
     <div>
-      <Canvas /> 
+      <Board /> 
     </div>
   );
 }
