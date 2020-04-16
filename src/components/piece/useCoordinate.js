@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-
-const Piece = () => {
-
+export const useCoordinate= () => {
   const [coordinate, setCoordinate] = useState({cx: 75/2 , cy: 75/2, counter: 1});
 
   const movement = () => {
@@ -12,19 +10,10 @@ const Piece = () => {
       console.log(coordinate.counter);
     } else {
       setCoordinate({...coordinate, cy: coordinate.cy});
-      console.log("no moves available")
+      console.log('no moves available');
     }
-  }
+  };
 
-  return(
-    <circle
-      cx={coordinate.cx}
-      cy={coordinate.cy}
-      onClick={movement}
-      r="20"
-    />
-  )
-}
+  return {coordinate, movement };
+};
 
-
-export default Piece;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Piece from './hookPiece';
+import Piece from './piece';
 
  class Pieces extends React.Component {
   constructor(props) {
