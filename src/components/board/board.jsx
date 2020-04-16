@@ -14,18 +14,14 @@ const Board = ({onClick}) => {
 
   return (
     <div>
-      <button onClick={onClick}>Start Game</button>
       <svg
       id="chess-canvas"
       style={styleSheet}
       >
-
         <Lines />
         <Pieces />
       </svg>
     </div>
-
-    
   );
 };
 
