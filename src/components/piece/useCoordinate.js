@@ -16,4 +16,3 @@ export const useCoordinate= () => {
 
   return {coordinate, movement };
 };
-

@@ -1,32 +1,59 @@
-import React, { useState } from 'react';
-import { useCoordinate } from './useCoordinate';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+// import { useCoordinate } from './useCoordinate';
 
 const Piece = () => {
 
-  const {coordinate, movement} = useCoordinate(); 
+  // const {coordinate, movement} = useCoordinate(); 
+  const [coords, setCoords] = useState({ x: 75/2, y: 75/2 });
+  const [clicked, setIsClicked] = useState({isclicked: false, fill: "black"})
 
-  // const [coordinate, setCoordinate] = useState({cx: 75/2 , cy: 75/2, counter: 1});
+  const handleClick = () => {
+    setIsClicked({isclicked: true, fill: "red"})
+  }
 
-  // const movement = () => {
+  const handler = useCallback(
+    ({ clientX, clientY }) => {
 
-  //   if(coordinate.cy < 562.5){
-  //     setCoordinate({...coordinate, cy: coordinate.cy + 75, counter: coordinate.counter + 1});
-  //     console.log(coordinate.counter);
-  //   } else {
-  //     setCoordinate({...coordinate, cy: coordinate.cy});
-  //     console.log("no moves available")
-  //   };
-  // };
+      setCoords({ x: clientX, y: clientY });
+    },
+    [setCoords]
+  );
+
+  useEventListener('mousedown', handler);
+
+  function useEventListener(eventName, handler, element = window){
+
+    const savedHandler = useRef();
+
+    useEffect(() => {
+      savedHandler.current = handler;
+    }, [handler]);
+  
+    useEffect(
+      () => {
+
+        const eventListener = event => savedHandler.current(event);
+        
+        element.addEventListener(eventName, eventListener);
+        
+        return () => {
+          element.removeEventListener(eventName, eventListener);
+        };
+      },
+      [eventName, element] 
+    );
+  };
 
   return(
     <circle
-      cx={coordinate.cx}
-      cy={coordinate.cy}
-      onClick={movement}
+      cx={coords.x}
+      cy={coords.y}
+      onClick={handleClick}
+      fill={clicked.fill}
       r="20"
     />
+    
   )
 }
-
 
 export default Piece;
