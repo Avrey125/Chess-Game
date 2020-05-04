@@ -1,22 +1,12 @@
 import React from 'react';
-import './App.css';
-import Board from '../board/board'
-import { connect } from 'react-redux';
+import Board from '../board/board';
 
-const  App = () => {
-
-  return (
-    <div>
-      <Board /> 
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return(
+      <Board />
+    )
+  }
 }
 
-// mapStateToProps = (state) => {
-//   return {
-
-//   }
-// }
-
-
-export default connect()(App);
+export default App
