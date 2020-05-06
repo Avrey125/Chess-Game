@@ -6,7 +6,7 @@ class App extends React.Component {
     return(
       <Board />
     )
-  }
-}
+  };
+};
 
-export default App
+export default App;
