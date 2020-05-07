@@ -62,4 +62,3 @@ body {
   .box:nth-child(57) ~ div:nth-child(-2n + 64) {
     background-color: #441a03;
   }
-  

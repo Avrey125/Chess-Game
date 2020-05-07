@@ -26,8 +26,8 @@ body {
     padding: 20px;
     font-size: 150%;
     background-color: #b5915f;
-    /* color: red; */
     text-align: center;
+    margin: auto auto;
   }
   .box-inner {
     text-align: center;
