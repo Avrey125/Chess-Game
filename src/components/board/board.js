@@ -1,23 +1,12 @@
 import React from "react";
 import "./board.css";
 import Square from "../square/square";
+import { RANKS, FILES } from '../../data.js';
+import BoardService from '../../services/boardService'
 
-const FILES = ["a", "b", "c", "d", "e", "f", "g", "h"];
-const RANKS = [1, 2, 3, 4, 5, 6, 7, 8];
-
-function makeBoard(ranks, files) {
-  return ranks.reduce((board, rank) => {
-    files.forEach(file => {
-      const coordinate = `${file}${rank}`;
-      board.push({ coordinate: coordinate, piece: null});
-    });
-    return board;
-  }, []);
-}
-
-const board = makeBoard(RANKS, FILES);
-
-export default function Board() {
+export default function Board () {
+  const _boardService = new BoardService();
+  const boardSquares = _boardService.makeBoardSquares(RANKS, FILES);
   return (
     <div className="wrapper">
       <div className="top">
@@ -25,7 +14,7 @@ export default function Board() {
         {FILES.map(value => ( <div key={value} className="box-inner">{value}</div> ))}
         </div>
       </div>
-      {board.map(value => (
+      {boardSquares.map(value => (
         <Square value={value.coordinate} />
       ))}
       <div className="bottom">
@@ -35,4 +24,4 @@ export default function Board() {
       </div>
     </div>
   );
-}
+};
