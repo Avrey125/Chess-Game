@@ -1,9 +1,8 @@
-import React from "react";
-import "../../styles/styles.css";
-import Piece from '../piece/piece';
+import React from 'react';
+import '../../styles/main.css';
 
 const Square = props => {
-  return <div className="box"><Piece value={props.value}/></div>;
+  return <div className='box'>{props.value}</div>;
 };
 
 export default Square;
