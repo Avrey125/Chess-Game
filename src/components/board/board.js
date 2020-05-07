@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/styles.css";
+import "./board.css";
 import Square from "../square/square";
 
 const FILES = ["a", "b", "c", "d", "e", "f", "g", "h"];
