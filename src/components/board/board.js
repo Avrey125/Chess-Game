@@ -1,21 +1,12 @@
 import React from "react";
 import "./board.css";
 import Square from "../square/square";
+const makeBoard = require('../../services/boardService');
 
 const FILES = ["a", "b", "c", "d", "e", "f", "g", "h"];
 const RANKS = [1, 2, 3, 4, 5, 6, 7, 8];
 
-function makeBoard(ranks, files) {
-  return ranks.reduce((board, rank) => {
-    files.forEach(file => {
-      const coordinate = `${file}${rank}`;
-      board.push({ coordinate: coordinate, piece: null});
-    });
-    return board;
-  }, []);
-}
-
-const board = makeBoard(RANKS, FILES);
+const board =  makeBoard(FILES,RANKS);
 
 export default function Board() {
   return (

@@ -13,9 +13,8 @@ test('Function will have objects with chessboard grid property values ', () => {
   expect(board(FILES, RANKS)).toEqual(
     expect.arrayContaining([
       expect.objectContaining({
-        id: '1a',
+        coordinate: '1a',
         piece: null,
-        color: 'white' ,
       }),
     ]),
   );
@@ -25,9 +24,8 @@ test('Function will have objects with chessboard grid property values ', () => {
   expect(board(FILES, RANKS)).toEqual(
     expect.arrayContaining([
       expect.objectContaining({
-        id: '8h',
+        coordinate: '8h',
         piece: null,
-        color: 'white',
       }),
     ]),
   );
