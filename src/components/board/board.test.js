@@ -1,8 +1,7 @@
-const board = require('./board');
+const board = require('../../services/boardService');
 
 const FILES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const RANKS = [1, 2, 3, 4, 5, 6, 7, 8];
-
 
 describe('board.js', () => {
   // testing to make sure the array is populated with 64 object values
@@ -17,7 +16,8 @@ describe('board.js', () => {
         expect.objectContaining({
           coordinate: '1A',
           piece: null,
-        }),
+        },
+        ),
       ]),
     );
   });
@@ -33,6 +33,5 @@ describe('board.js', () => {
     );
   });
 });
-
 
 console.log(board);
