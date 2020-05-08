@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/main.css';
+import './square.css';
 
 const Square = props => {
   return <div className='box'>{props.value}</div>;

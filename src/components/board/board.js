@@ -2,7 +2,7 @@ import React from 'react';
 import './board.css';
 import Square from '../square/square';
 
-const FILES = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+const FILES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const RANKS = [1, 2, 3, 4, 5, 6, 7, 8];
 
 function makeBoard(ranks, files) {
@@ -18,6 +18,7 @@ function makeBoard(ranks, files) {
 const board = makeBoard(RANKS, FILES);
 
 export default function Board() {
+  
   return (
     <div className='wrapper'>
       <div className='top'>

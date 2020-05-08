@@ -21,13 +21,6 @@ body {
     grid-auto-flow: row;
     align-items: strech;
   }
-  .box {
-    padding: 20px;
-    font-size: 150%;
-    background-color: #b5915f;
-    /* color: red; */
-    text-align: center;
-  }
   .box-inner {
     text-align: center;
     align-self: center;
