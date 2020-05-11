@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/styles.css";
+import "./square.css";
 import Piece from '../piece/piece';
 
 const Square = props => {
