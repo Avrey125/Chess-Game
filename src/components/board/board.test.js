@@ -1,37 +1,42 @@
-const board = require('../../services/boardService');
 
-const FILES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-const RANKS = [1, 2, 3, 4, 5, 6, 7, 8];
+const FILES = ['Jack', 'Seamore', 'Hugh', 'Michael', 'Benjamin', 'Dixie', 'Justin', 'William'];
+const RANKS = ['Dover', 'Normus', 'Butz', 'Jaenus', 'Kanoff', 'Sider', 'Stroker', 'unt'];
+const randomFiles = FILES[Math.floor(Math.random() * FILES.length)];
+const randomRanks = RANKS[Math.floor(Math.random() * RANKS.length)];
+const randomFileRank = `${randomRanks}${randomFiles}`;
 
-describe('board.js', () => {
-  // testing to make sure the array is populated with 64 object values
-  test('Function will create an array of square objects', () => {
-    expect (board(FILES, RANKS)).toHaveLength(64);
-  });
+function makeBoard(ranks, files) {
+  return ranks.reduce((board, rank) => {
+    files.forEach(file => {
+      const coordinate = `${file}${rank}`;
+      board.push({ coordinate: coordinate, piece: null});
+    });
+    return board;
+  }, []);
+}
 
-  // testing to make sure thhe objects have the required grid properties
-  test('Function will have objects with chessboard grid property values ', () => {
-    expect(board(FILES, RANKS)).toEqual(
+describe('Testing makeBoard Function', () => {
+  test('Function will output a 2 word combinatio', () => {
+    expect(makeBoard(FILES, RANKS)).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          coordinate: '1A',
+          coordinate: randomFileRank,
           piece: null,
         },
         ),
       ]),
     );
   });
-
-  test('Function will have objects with chessboard grid property values ', () => {
-    expect(board(FILES, RANKS)).toEqual(
+  test('Function will output a 2 word combinatiodespite the input arrays being reversed', () => {
+    expect(makeBoard(FILES.reverse(), RANKS.reverse())).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          coordinate: '8H',
+          coordinate: randomFileRank,
           piece: null,
-        }),
+        },
+        ),
       ]),
     );
   });
 });
 
-console.log(board);

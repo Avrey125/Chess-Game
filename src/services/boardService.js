@@ -9,4 +9,4 @@ function makeBoard(ranks, files) {
   }, []);
 }
 
-module.exports = (makeBoard);
+module.exports = {makeBoard: makeBoard};
