@@ -13,7 +13,7 @@ export default function Board() {
         </div>
       </div>
       {BOARD.map(value => (
-        <Square key={value.coordinate} value={value.coordinate} />
+        <Square key ={value.id} value={value.id} />
       ))}
       <div className='bottom'>
         <div className='wrapper-inner'>

@@ -2,8 +2,8 @@
 export function makeBoard(ranks, files) {
   return ranks.reduce((board, rank) => {
     files.forEach(file => {
-      const coordinate = `${file}${rank}`;
-      board.push({ coordinate: coordinate, piece: null});
+      const id = `${file}${rank}`;
+      board.push({ id: id, piece: null});
     });
     return board;
   }, []);
