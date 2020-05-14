@@ -1,42 +1,46 @@
+import React from 'react';
+import TestRenderer from 'react-test-renderer'; // ES6
+import { render, unmountComponentAtNode } from 'react-dom';
+import { act } from 'react-dom/test-utils';
+import Board from './board';
 
-const FILES = ['Jack', 'Seamore', 'Hugh', 'Michael', 'Benjamin', 'Dixie', 'Justin', 'William'];
-const RANKS = ['Dover', 'Normus', 'Butz', 'Jaenus', 'Kanoff', 'Sider', 'Stroker', 'unt'];
-const randomFiles = FILES[Math.floor(Math.random() * FILES.length)];
-const randomRanks = RANKS[Math.floor(Math.random() * RANKS.length)];
-const randomFileRank = `${randomRanks}${randomFiles}`;
+// I need to test to make sure my board component contains 64 square components
+// arrange, act, assert
+// Arrange, your app is in a certain original state
+// Act, then something happens (click event, input, etc.)
+// Assert, or make a hypothesis, of the new state of your app
+// Your tests should test the functionality of the app, that mimic how it will be used by your end users.
 
-function makeBoard(ranks, files) {
-  return ranks.reduce((board, rank) => {
-    files.forEach(file => {
-      const coordinate = `${file}${rank}`;
-      board.push({ coordinate: coordinate, piece: null});
-    });
-    return board;
-  }, []);
-}
+describe('board.js', () => {
 
-describe('Testing makeBoard Function', () => {
-  test('Function will output a 2 word combinatio', () => {
-    expect(makeBoard(FILES, RANKS)).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          coordinate: randomFileRank,
-          piece: null,
-        },
-        ),
-      ]),
-    );
+    let container = null;
+  beforeEach(() => {
+    // setup a DOM element as a render target
+    container = document.createElement("div");
+    // container *must* be attached to document so events work correctly.
+    document.body.appendChild(container);
   });
-  test('Function will output a 2 word combinatiodespite the input arrays being reversed', () => {
-    expect(makeBoard(FILES.reverse(), RANKS.reverse())).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          coordinate: randomFileRank,
-          piece: null,
-        },
-        ),
-      ]),
-    );
+  afterEach(() => {
+    // cleanup on exiting
+    unmountComponentAtNode(container);
+    container.remove();
+    container = null;
   });
-});
-
+  it("renders with or without a name", () => {
+    let board = null;
+    board = TestRenderer.create(<Board />);
+    const boardAsJson = board.toJSON();
+    expect(boardAsJson.props.className).toEqual('wrapper');
+    console.log(boardAsJson);
+  });
+  it('contains 64 square objects with their own individual values', () => {
+    let board = null;
+    board = TestRenderer.create(<Board />);
+    const boardAsJson = board.toJSON();
+    expect(boardAsJson.children[0].props.className).toEqual('top');
+    expect(boardAsJson.children[1].props.className).toEqual('box');
+    expect(boardAsJson.children[1].props.value).toBe('A1');
+    expect(boardAsJson.children[65].props.className).toEqual('bottom');
+    expect(boardAsJson.children.length).toEqual(66);
+  })
+})
