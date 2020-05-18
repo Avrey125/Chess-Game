@@ -3,7 +3,7 @@ import './square.css'
 
 const Square = props => {
   
-  return <div key={props.value} value={props.value} className='box'><Piece /></div>;
+  return <div className='box'>{props.value}</div>;
 };
 
 export default Square;
