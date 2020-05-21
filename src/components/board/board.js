@@ -2,6 +2,7 @@ import React from 'react';
 import './board.css';
 import Square from '../square/square';
 import {BOARD, FILES} from '../../services/boardService';
+import { addProps } from 'services/pieceService';
 
 export default function Board() {
 
@@ -13,7 +14,7 @@ export default function Board() {
         </div>
       </div>
       {BOARD.map(value => (
-        <Square key ={value.id} value={value.id} />
+        <Square key ={value.id} color={value.color} id={value.id} />
       ))}
       <div className='bottom'>
         <div className='wrapper-inner'>
