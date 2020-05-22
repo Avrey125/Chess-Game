@@ -12,7 +12,7 @@ const Piece = props => {
     color: props.color,
   });
 
-return <div style={state.color === 'black' ? {backgroundColor: 'black'} : {backgroundColor: 'white'}} id={state.id} className='piece'> {state.placement}</div>;
+return <div style={state.color === 'black' ? {backgroundColor: 'black'} : {backgroundColor: 'white'}} id={state.id} placement={state.placement} className='piece'> {state.placement}</div>;
 };
 
 export default Piece;

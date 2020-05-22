@@ -25,19 +25,12 @@ describe('piece.js', () => {
       piece = TestRenderer.create(<Piece />);
     const pieceAsJson = piece.toJSON();
     expect(pieceAsJson.props.className).toEqual('piece')
+    console.log(pieceAsJson)
   });
-
-  it('contains 64 square objects with their own individual values', () => {
-    let board = null;
-    board = TestRenderer.create(<Board />);
-    const boardAsJson = board.toJSON();
-    let coordinateValues = 7;
-    let squares = boardAsJson.children.splice(1,64);
-    let coordinates = squares.map( (square) => {
-      return square.props.color;
-    });
-    console.log(squares);
-    expect(coordinates).toEqual(coordinateValues);
-  })
-
+  it('each piece has its own color', () => {
+    let piece = null;
+      piece = TestRenderer.create(<Piece />);
+    const pieceAsJson = piece.toJSON();
+    expect(pieceAsJson.props.style.backgroundColor).toBe('white')
+  });
 });
