@@ -3,7 +3,7 @@ import TestRenderer from 'react-test-renderer'; // ES6
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Piece from './piece';
-import Board from '../board/board';
+import Square from '../square/square';
 
 describe('piece.js', () => {
 
@@ -31,6 +31,6 @@ describe('piece.js', () => {
     let piece = null;
       piece = TestRenderer.create(<Piece />);
     const pieceAsJson = piece.toJSON();
-    expect(pieceAsJson.props.style.backgroundColor).toBe('white')
+    expect(pieceAsJson.props.style.backgroundColor).toBe('white');
   });
 });
