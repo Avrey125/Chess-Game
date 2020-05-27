@@ -1,7 +1,8 @@
 .box {
-    padding: 20px;
-    font-size: 150%;
-    background-color: #b5915f;
-    /* color: red; */
-    text-align: center;
-  }
+  padding: 20px;
+  font-size: 150%;
+  background-color: rgb(122, 177, 214);
+  /* color: red; */
+  text-align: center;
+  border: 2px inset black;
+}
