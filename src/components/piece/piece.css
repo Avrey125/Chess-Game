@@ -1,8 +1,7 @@
 .piece {
-    border-radius:100%;
-    height: 30px;
-    width: 30px;
-    border: 1px solid black;
-    color: red;
-
-};
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  color: red;
+}
