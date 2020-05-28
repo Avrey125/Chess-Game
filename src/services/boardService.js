@@ -30,7 +30,7 @@ export const PIECES = [
   { id: 'pawn5', name: 'Pawn' },
   { id: 'pawn6', name: 'Pawn' },
   { id: 'pawn7', name: 'Pawn' },
-  { id: 'pawn8', name: 'Pawn' },
+  { id: 'pawn8', name: 'Pawn' }
 ]
 
 export const FILES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']

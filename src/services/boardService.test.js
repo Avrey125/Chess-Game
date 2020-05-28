@@ -66,7 +66,7 @@ const boardData = [
   { id: 'E8', piece: null, color: 'black' },
   { id: 'F8', piece: null, color: 'black' },
   { id: 'G8', piece: null, color: 'black' },
-  { id: 'H8', piece: null, color: 'black' },
+  { id: 'H8', piece: null, color: 'black' }
 ]
 
 describe('testing boardService', () => {
@@ -83,8 +83,8 @@ describe('testing boardService', () => {
       expect.arrayContaining([
         expect.objectContaining({
           id: randomFileRank,
-          piece: null,
-        }),
+          piece: null
+        })
       ])
     )
   })
@@ -94,8 +94,8 @@ describe('testing boardService', () => {
       expect.arrayContaining([
         expect.objectContaining({
           id: randomFileRank,
-          piece: null,
-        }),
+          piece: null
+        })
       ])
     )
   })
