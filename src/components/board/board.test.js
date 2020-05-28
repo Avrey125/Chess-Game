@@ -102,12 +102,10 @@ describe('board.js', () => {
       'H8',
     ]
     let squares = boardAsJson.children.splice(1, 64)
-    console.log(squares)
 
     let coordinates = squares.map(square => {
-      return square.props.value
+      return square.props.id
     })
-
     expect(coordinates).toEqual(coordinateValues)
   })
   it('will not contain a coordinate value past 8', () => {
