@@ -6,17 +6,21 @@ const Piece = props => {
     name: '',
     id: '',
     placement: props.id,
-    color: props.color,
+    color: props.color
   })
 
   return (
     <div
-      style={state.color === 'black' ? { backgroundColor: 'black' } : { backgroundColor: 'white' }}
+      style={
+        state.color === 'black'
+          ? { backgroundColor: 'black' }
+          : { backgroundColor: 'white' }
+      }
       id={state.id}
       placement={state.placement}
       className="piece"
+      color={state.color}
     >
-      {' '}
       {state.placement}
     </div>
   )

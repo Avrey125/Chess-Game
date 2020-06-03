@@ -3,13 +3,14 @@ export function makeBoard(ranks, files, pieces) {
     files.forEach(file => {
       const id = `${file}${rank}`
       if (id.includes('1') || id.includes('2')) {
-        board.push({ id: id, piece: null, color: 'white' })
+        board.push({ id: id, piece: null, color: 'white', position: id })
       } else if (id.includes('7') || id.includes('8')) {
-        board.push({ id: id, piece: null, color: 'black' })
+        board.push({ id: id, piece: null, color: 'black', position: id })
       } else {
-        board.push({ id: id, piece: null, color: null })
+        board.push({ id: id, piece: null, color: null, position: id })
       }
     })
+    console.log(board)
     return board
   }, [])
 }
@@ -30,9 +31,16 @@ export const PIECES = [
   { id: 'pawn5', name: 'Pawn' },
   { id: 'pawn6', name: 'Pawn' },
   { id: 'pawn7', name: 'Pawn' },
-  { id: 'pawn8', name: 'Pawn' },
+  { id: 'pawn8', name: 'Pawn' }
 ]
 
 export const FILES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 export const RANKS = [1, 2, 3, 4, 5, 6, 7, 8]
 export const BOARD = makeBoard(RANKS, FILES, PIECES)
+
+function stuff(pieces, board) {
+  Object.assign(pieces, board)
+  console.log(board)
+}
+
+stuff(PIECES, BOARD)
