@@ -5,6 +5,10 @@ import { FILES } from '../../services/boardService'
 import { useSelector, useDispatch } from 'react-redux'
 
 export default function Board() {
+  function handleReset(e) {
+    e.preventDefault()
+    console.log('clicked')
+  }
   const player = useSelector(state => state.currentPlayer)
   const board = useSelector(state => state.BOARD)
   const dispatch = useDispatch()
@@ -34,6 +38,7 @@ export default function Board() {
           </div>
         </div>
       </div>
+      <button onClick={handleReset}>Restart Game</button>
     </div>
   )
 }
