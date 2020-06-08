@@ -5,5 +5,12 @@ let initialState = { BOARD, currentPlayer: 'White' }
 export default (state = initialState, action) => {
   let { type, payload } = action
 
-  return state
+  switch (type) {
+    case 'TOGGLEBLACK':
+      return { currentPlayer: 'Black' }
+    case 'TOGGLEWHITE':
+      return { currentPlayer: 'White' }
+    default:
+      return state
+  }
 }

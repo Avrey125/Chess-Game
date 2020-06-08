@@ -14,7 +14,9 @@ export default function Board() {
   const dispatch = useDispatch()
   return (
     <div className="wholeThang">
-      <div className="player">Player:{player}</div>
+      <div className="player" onClick={() => dispatch({ type: 'TOGGLEBLACK' })}>
+        Player:{player}
+      </div>
       <div className="wrapper">
         <div className="top">
           <div className="wrapper-inner">
