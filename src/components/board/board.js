@@ -1,17 +1,19 @@
 import React from 'react'
 import './board.css'
 import Square from '../square/square'
-import { FILES } from '../../services/boardService'
 import { useSelector, useDispatch } from 'react-redux'
 
 export default function Board() {
+  const player = useSelector(state => state.currentPlayer)
+  const board = useSelector(state => state.BOARD)
+  const files = useSelector(state => state.FILES)
+  const dispatch = useDispatch()
   function handleReset(e) {
     e.preventDefault()
     console.log('clicked')
+    console.log(board)
   }
-  const player = useSelector(state => state.currentPlayer)
-  const board = useSelector(state => state.BOARD)
-  const dispatch = useDispatch()
+
   return (
     <div className="wholeThang">
       <div className="player" onClick={() => dispatch({ type: 'TOGGLEBLACK' })}>
@@ -20,7 +22,7 @@ export default function Board() {
       <div className="wrapper">
         <div className="top">
           <div className="wrapper-inner">
-            {FILES.map(value => (
+            {files.map(value => (
               <div key={value} className="box-inner">
                 {value}
               </div>
@@ -28,11 +30,17 @@ export default function Board() {
           </div>
         </div>
         {board.map(value => (
-          <Square key={value.id} color={value.color} id={value.id} />
+          <Square
+            piece={value.piece}
+            key={value.id}
+            color={value.color}
+            id={value.id}
+            occupied={value.occupied}
+          />
         ))}
         <div className="bottom">
           <div className="wrapper-inner">
-            {FILES.map(value => (
+            {files.map(value => (
               <div key={value} className="box-inner">
                 {value}
               </div>
