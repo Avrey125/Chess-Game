@@ -25,10 +25,4 @@ describe('piece.js', () => {
     expect(pieceAsJson.props.className).toEqual('piece')
     console.log(pieceAsJson)
   })
-  it('each piece has its own color', () => {
-    let piece = null
-    piece = TestRenderer.create(<Piece />)
-    const pieceAsJson = piece.toJSON()
-    expect(pieceAsJson.props.style.backgroundColor).toBe('white')
-  })
 })

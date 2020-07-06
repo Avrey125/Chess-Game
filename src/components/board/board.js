@@ -36,6 +36,7 @@ export default function Board() {
             color={value.color}
             id={value.id}
             occupied={value.occupied}
+            src={value.src}
           />
         ))}
         <div className="bottom">

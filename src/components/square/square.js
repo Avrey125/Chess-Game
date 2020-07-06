@@ -6,13 +6,14 @@ const Square = props => {
   const occupied = props.occupied
 
   return (
-    <div className="box" id={props.id} onClick={() => console.log(props.id)}>
-      {occupied !== false && (
+    <div className="box" id={props.id} onClick={() => console.log(props)}>
+      {props.piece && (
         <Piece
           id={props.id}
           color={props.color}
           occupied={occupied}
           piece={props.piece}
+          src={props.src}
         />
       )}
     </div>

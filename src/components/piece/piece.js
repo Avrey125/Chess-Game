@@ -7,14 +7,9 @@ const Piece = props => {
     id: '',
     placement: props.id,
     color: props.color,
-    clicked: false
+    clicked: false,
+    piece: props.piece
   })
-  const occupied = JSON.stringify(props.occupied)
-  const toggleClick = () => {
-    // setState((state.clicked = !state.clicked))
-    // console.log(state.clicked)
-    console.log(props.id, occupied)
-  }
 
   return (
     <div
@@ -22,11 +17,13 @@ const Piece = props => {
       placement={state.placement}
       className="piece"
       color={state.color}
-      onClick={() => toggleClick()}
-      occupied={occupied}
-      piece={props.piece}
+      piece={state.piece}
+      onClick={() => {
+        setState(state.clicked === !state.clicked)
+        console.log(state.clicked)
+      }}
     >
-      {props.piece}
+      <img className="pieceImage" src={props.src} />
     </div>
   )
 }

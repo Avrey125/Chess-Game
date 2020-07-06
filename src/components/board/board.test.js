@@ -99,7 +99,7 @@ describe('board.js', () => {
       'E8',
       'F8',
       'G8',
-      'H8',
+      'H8'
     ]
     let squares = boardAsJson.children.splice(1, 64)
 
