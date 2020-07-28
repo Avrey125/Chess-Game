@@ -10,6 +10,7 @@
     "format": "prettier --write \"src/**/*.(js|jsx|json|css|md)\""
   },
   "dependencies": {
+    "babel-jest": "^26.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dnd": "^10.0.2",

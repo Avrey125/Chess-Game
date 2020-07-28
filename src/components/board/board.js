@@ -2,6 +2,7 @@ import React from 'react'
 import './board.css'
 import Square from '../square/square'
 import { useSelector, useDispatch } from 'react-redux'
+// add listener to piece for selection,
 
 export default function Board() {
   const player = useSelector(state => state.currentPlayer)
@@ -37,6 +38,7 @@ export default function Board() {
             id={value.id}
             occupied={value.occupied}
             src={value.src}
+            selected={value.selected}
           />
         ))}
         <div className="bottom">

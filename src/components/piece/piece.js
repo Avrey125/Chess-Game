@@ -1,29 +1,34 @@
 import React, { useState } from 'react'
 import './piece.css'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Piece = props => {
-  const [state, setState] = useState({
+  const board = useSelector(state => state.BOARD)
+  const piece = useSelector(state => state.PIECE)
+  const dispatch = useDispatch()
+  const [properties, setProperties] = useState({
     name: '',
     id: '',
     placement: props.id,
     color: props.color,
     clicked: false,
-    piece: props.piece
+    piece: props.piece,
+    src: props.src,
+    selected: props.selected
   })
 
   return (
     <div
-      id={state.id}
-      placement={state.placement}
-      className="piece"
-      color={state.color}
-      piece={state.piece}
-      onClick={() => {
-        setState(state.clicked === !state.clicked)
-        console.log(state.clicked)
-      }}
+      id={properties.id}
+      placement={properties.placement}
+      className={'piece'}
+      color={properties.color}
+      piece={properties.piece}
+      onClick={() => dispatch({ type: 'SELECT', payload: { props } })}
+      selected={properties.selected}
+      // onClick={() => console.log(props)}
     >
-      <img className="pieceImage" src={props.src} />
+      <img className="pieceImage" src={properties.src} />
     </div>
   )
 }

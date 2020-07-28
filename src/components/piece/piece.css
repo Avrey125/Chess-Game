@@ -1,5 +1,11 @@
 .piece {
   /* display: flex; */
+  border: 50 px solid red;
+}
+
+.pieceSelected {
+  /* display: flex; */
+  border: 20px solid red;
 }
 
 .pieceImage {

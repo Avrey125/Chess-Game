@@ -20,21 +20,24 @@ export function makeBoard(ranks, files) {
           id: id,
           piece: null,
           position: id,
-          occupied: true
+          occupied: true,
+          selected: false
         })
       } else if (id.includes('7') || id.includes('8')) {
         board.push({
           id: id,
           piece: null,
           position: id,
-          occupied: true
+          occupied: true,
+          selected: false
         })
       } else {
         board.push({
           id: id,
           piece: null,
           position: id,
-          occupied: false
+          occupied: false,
+          selected: false
         })
       }
     })

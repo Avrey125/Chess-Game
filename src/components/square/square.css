@@ -5,3 +5,11 @@
   text-align: center;
   border: 2px inset black;
 }
+
+.boxSelected {
+  padding: 20px;
+  font-size: 150%;
+  background-color: rgb(122, 177, 214);
+  text-align: center;
+  border: 10px inset black;
+}
